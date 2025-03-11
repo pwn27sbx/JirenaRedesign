@@ -1,0 +1,83 @@
+---
+import Section from "./Section.astro";
+import Aliados from "./Aliados.astro";
+---
+
+<Section
+  title="Contactanos"
+  subtitle="Ellos ya confian en nosotros"
+  color="white"
+  id="contactanos"
+>
+  <div slot="footer" class="custom-footer">
+    <a
+      class="border-[3px] border-blue-600/10 bg-blue-600/90 backdrop-blur-3xl text-sm rounded font-medium text-white px-12 py-2 inline-block hover:bg-blue-800/80 hover:border-white/5 hover:text-white transition-colors w-[245px]"
+      href="#"
+    >
+      +51 959 920 668</a
+    >
+    <a
+      class="border-[3px] border-white bg-white backdrop-blur-3xl text-sm rounded font-medium text-black px-12 py-2 inline-block hover:bg-white/60 hover:border-white/5 hover:text-black transition-colors w-[245px]"
+      href="mailto:pwn27sbx@gmail.com"
+    >
+      Enviar E-mail</a
+    >
+  </div>
+  <div slot="footer">
+    <div class="grid grid-cols-5 grid-rows-2 gap-4">
+      <div class="col-span-3 row-span-2 col-start-2"><Aliados /></div>
+    </div>
+  </div>
+
+  <img
+    slot="background"
+    alt="contactanos"
+    class="object-center object-cover w-full h-full"
+    src="camion3.avif"
+    id="bg-image-contacto"
+  />
+</Section>
+
+<style>
+  /* Asegurándonos de aplicar un margen al contenedor del footer */
+  .custom-footer {
+    margin-bottom: 435px; /* Eliminar márgenes extra si los hubiera */
+  }
+
+  /* Margen específico para el botón */
+  .custom-button {
+    margin-top: 2px; /* Ajuste del margen superior para que quede debajo del texto */
+  }
+
+  /* Separación entre los botones */
+  .custom-footer a {
+    margin-right: 10px; /* Separación horizontal entre los botones */
+  }
+
+  /* Eliminar margen derecho del último botón */
+  .custom-footer a:last-child {
+    margin-right: 0;
+  }
+</style>
+
+<script>
+  function isEdge() {
+    if (
+      navigator.userAgent.indexOf("Edge") > -1 ||
+      navigator.userAgent.indexOf("Edg") > -1
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  let imageElement = document.querySelector(
+    "#bg-image-especialidades"
+  ) as HTMLImageElement;
+  if (isEdge()) {
+    imageElement.src = "especialidades.webp";
+  } else {
+    imageElement.src = "especialidades.avif";
+  }
+</script>

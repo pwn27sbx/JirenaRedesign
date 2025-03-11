@@ -1,0 +1,143 @@
+---
+import Section from "./Section.astro";
+---
+
+<Section
+  title="Nuestros Servicios"
+  subtitle="Los servicios de la mas alta calidad"
+  color="white"
+  id="servicios"
+>
+  <div slot="footer">
+    <div class="grid grid-cols-6 grid-rows-3 gap-0">
+      <!-- Se eliminó el espacio entre celdas -->
+
+      <!-- Primer contenedor: Transporte de carga y mercancia -->
+      <div class="col-span-2 row-span-3">
+        <div
+          class="relative group h-[400px] border-[0.25px] border-gray-100/40 border-l-0 border-t-0 border-b-0 border-r-0 overflow-hidden"
+        >
+          <div
+            class="relative h-full w-full bg-gradient-to-t from-white/10 to-transparent backdrop-blur-3xl transition-all duration-300 group-hover:backdrop-blur-[4px] flex items-center justify-center"
+          >
+            <h1
+              class="text-white text-2xl font-bold opacity-100 transition-opacity duration-300 group-hover:opacity-0"
+            >
+              Transporte de carga y mercancia
+            </h1>
+            <h1
+              class="absolute text-white text-xl font-bold opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <img
+                src="TransportesCarga.avif"
+                alt="Transporte de carga y mercancia"
+                class="w-full h-full object-cover"
+              />
+            </h1>
+          </div>
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <span class="text-black text-xl font-bold">Transporte de Carga</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Segundo contenedor: Servicios Express -->
+      <div class="col-span-2 row-span-3 col-start-3">
+        <div
+          class="relative group h-[400px] border-[1px] border-gray-100/40 border-t-0 border-b-0 overflow-hidden"
+        >
+          <div
+            class="relative h-full w-full bg-gradient-to-t from-white/10 to-transparent backdrop-blur-3xl transition-all duration-300 group-hover:backdrop-blur-[4px] flex items-center justify-center"
+          >
+            <h1
+              class="text-white text-2xl font-bold opacity-100 transition-opacity duration-300 group-hover:opacity-0"
+            >
+              Servicios Express
+            </h1>
+            <h1
+              class="absolute text-white text-xl font-bold opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <img
+                src="ServiciosExpress.avif"
+                alt="Servicios Express"
+                class="w-auto h-auto object-cover"
+              />
+            </h1>
+          </div>
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <span class="text-black text-xl font-bold">Servicios Express</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tercer contenedor: Alquiler de Almacenes y Montacargas -->
+      <div class="col-span-2 row-span-3 col-start-5">
+        <div
+          class="relative group h-[400px] border-[0.25px] border-gray-100/40 border-t-0 border-b-0 border-r-0 border-l-0 overflow-hidden"
+        >
+          <!-- Añadido borde izquierdo en el tercer div -->
+          <div
+            class="relative h-full w-full bg-gradient-to-t from-white/10 to-transparent backdrop-blur-3xl transition-all duration-300 group-hover:backdrop-blur-[4px] flex items-center justify-center"
+          >
+            <h1
+              class="text-white text-2xl font-bold opacity-100 transition-opacity duration-300 group-hover:opacity-0"
+            >
+              Alquiler de Almacenes y Montacargas
+            </h1>
+            <h1
+              class="absolute text-white text-xl font-bold opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            >
+              <img
+                src="AlmacenesMontacargas.avif"
+                alt="Alquiler de almacenes y montacargas"
+                class="w-full h-full object-cover"
+              />
+            </h1>
+          </div>
+          <div
+            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <span class="text-black text-xl font-bold"
+              >Alquiler de Almacenes y Montacargas</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img
+    slot="background"
+    alt="contactanos"
+    class="object-center object-cover w-full
+  h-full opacity-80"
+    src="camion.avif"
+    id="bg-image-contacto"
+  />
+</Section>
+
+<script>
+  function isEdge() {
+    if (
+      navigator.userAgent.indexOf("Edge") > -1 ||
+      navigator.userAgent.indexOf("Edg") > -1
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  let imageElement = document.querySelector(
+    "#bg-image-servicios"
+  ) as HTMLImageElement;
+  if (isEdge()) {
+    imageElement.src = "servicios.webp";
+  } else {
+    imageElement.src = "servicios.avif";
+  }
+</script>
